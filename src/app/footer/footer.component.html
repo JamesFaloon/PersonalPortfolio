@@ -1,0 +1,22 @@
+@if(footer){
+<div id="{{footer.divIds[0]}}" [ngClass]="{'darkMode' : darkMode, 'lightMode' : !darkMode}">
+    <h2> {{footer.title}}</h2>
+    <div id="{{footer.divIds[2]}}">
+        <ul>
+            @for(tech of footer.tech; track tech;) {
+            <li> {{tech}}</li>
+            }
+        </ul>
+
+        <p> {{footer.credits}}</p>
+
+    </div>
+    <div>
+        @if ('darkMode') {
+        <div [ngStyle]="{'border-bottom' : '1px solid #D3D3D3'}"> </div>
+        } @else {
+        <div [ngStyle]="{'border-bottom' : '1px solid #black'}"> </div>
+        }
+    </div>
+</div>
+}

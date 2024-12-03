@@ -1,0 +1,20 @@
+#outer {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.darkMode {
+    background-color: #454545;
+    color: white
+}
+
+.lightMode {
+    background-color: white;
+    color: black
+}
+
+#content {
+    text-align: center;
+    font-size: 24px;
+}

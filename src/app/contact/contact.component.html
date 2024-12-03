@@ -1,0 +1,27 @@
+@if(contact) {
+<div id="{{contact.divIds[0]}}" [ngClass]="{'darkMode' : darkMode, 'lightMode' : !darkMode}">
+    <div id="{{contact.divIds[1]}}">
+        <h1> {{contact.title}} </h1>
+    </div>
+    <div id="{{contact.divIds[2]}}">
+        <ul>
+            @for( link of contact.links; track link; let i = $index ) {
+
+            <li> <a href="{{link}}" [ngStyle]="{color : '#4288C3'}">{{contact.socials[i]}} </a> </li>
+            }
+
+        </ul>
+
+
+    </div>
+    <div>
+        @if ('darkMode') {
+        <div [ngStyle]="{'border-bottom' : '1px solid #D3D3D3'}"> </div>
+        } @else {
+        <div [ngStyle]="{'border-bottom' : '1px solid #black'}"> </div>
+        }
+    </div>
+</div>
+} @else {
+<div [ngStyle]="{'display' : 'none'}"> </div>
+}

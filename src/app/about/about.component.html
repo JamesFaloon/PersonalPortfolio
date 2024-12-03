@@ -1,0 +1,16 @@
+@if (about) { <div id="{{about.divIds[0]}}" [ngClass]="{'darkMode' : darkMode, 'lightMode' : !darkMode}">
+    <div id="{{about.divIds[1]}}">
+        <h2> {{about.title}} </h2>
+    </div>
+    <div id="{{about.divIds[2]}}">
+        <p> {{about.description}}</p>
+    </div>
+    <div>
+        @if ('darkMode') {
+        <div [ngStyle]="{'border-bottom' : '1px solid #D3D3D3'}"> </div>
+        } @else {
+        <div [ngStyle]="{'border-bottom' : '1px solid #black'}"> </div>
+        }
+    </div>
+</div>
+}

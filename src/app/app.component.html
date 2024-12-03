@@ -1,9 +1,10 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-<app-header [header] = headerContent [contact] = contactContent [darkMode] = darkMode> </app-header>
-
-<div [ngClass] = "{'darkMode' : darkMode, 'lightMode' : !darkMode}"> 
-    <mat-checkbox [(ngModel)] = "darkMode">
+<app-header [header]=headerContent [contact]=contactContent [darkMode]=darkMode> </app-header>
+<app-about [about]=aboutContent [darkMode]=darkMode> </app-about>
+<app-contact [contact]=contactContent [darkMode]=darkMode> </app-contact>
+<app-footer [footer]=footerContent [darkMode]=darkMode> </app-footer>
+<div [ngClass]="{'darkMode' : darkMode, 'lightMode' : !darkMode}">
+    <mat-checkbox [(ngModel)]="darkMode">
         <p> Dark Mode </p>
     </mat-checkbox>
 </div>
