@@ -1,0 +1,27 @@
+@if (header && contact ) {
+    <div id = "{{header.divIds[0]}}" [ngClass] = "{'darkMode' : darkMode, 'lightMode' : !darkMode}">
+        <div id = "{{header.divIds[1]}}">
+            <h1> {{header.name}} </h1>      
+        </div>
+        <div id = "{{header.divIds[2]}}"> 
+            <h2> {{header.role}} </h2>
+            <h2> {{header.motto}}</h2>
+        </div>
+        <mat-list [ngStyle]="{'display': 'flex', 'text-align' : 'center'}">
+            @for(link of contact.links; track link; let i = $index) {
+                <mat-list-item>
+                    <a mat-button href="{{link}}"> <mat-icon> {{contact.icons[i]}}</mat-icon> {{contact.socials[i]}} </a>
+                </mat-list-item>
+            }
+        </mat-list>
+        <div> 
+            @if ('darkMode') {
+                <div [ngStyle]="{'border-bottom' : '1px solid #D3D3D3'}"> </div> 
+            } @else {
+                <div [ngStyle]="{'border-bottom' : '1px solid #black'}"> </div>
+            }
+        </div>
+    
+    
+    </div>
+}

@@ -1,0 +1,56 @@
+{ 
+  "projects":    [
+      
+      {
+        "projectId": 1,
+        "title": "JS Falling Game with Galaga Theme",
+        "image": "images/Galaga.PNG",
+        "description": "I utilized a new framework called Zim to program a game with a Galaga theme. Developed and designed game mechanics such as the enemies' descent using the interval function in Zim. I also implemented a shooting system with container objects and the hitTestCircles method in Zim. Combined all these elements together to receive a 100% grade.",
+        "links": [
+          "https://jamesfaloon.github.io/JS-Falling-Game-with-Galaga-Theme/src/game.html",
+          "https://github.com/JamesFaloon/JS-Falling-Game-with-Galaga-Theme"
+        ],
+        "actions": ["play", "see-code"]
+      },
+      {
+        "projectId": 2,
+        "title": "Hypothetical School Management System",
+        "image": "images/SQL.PNG",
+        "description": "I collaborated and led a team of 3 to create a database for a hypothetical school. We followed the steps of normalization and converted the starting ER Model to a logical schema. We then wrote and applied MySQL scripts to implement the database and later created a NoSQL version. Additionally, we created PowerPoint and Word documents to present to the teacher, receiving a 95% grade.",
+        "links": [
+          "https://github.com/JamesFaloon/School-Management-System-Database-"
+        ],
+        "actions": ["see-code"]
+      },
+      {
+        "projectId": 3,
+        "title": "Braille Translator Command Line Application with Python",
+        "image": "images/braille.PNG",
+        "description": "Created a Python command-line application that features a translator between Braille and English, and vice versa. The program was built with the intention to detect which language needs to be translated. This program uses Python dictionaries to optimize and finish the translation in O(N) time.",
+        "links": [
+          "https://github.com/JamesFaloon/eng-intern-challenge/tree/submission/python"
+        ],
+        "actions": ["see-code"]
+      },
+      {
+        "projectId": 4,
+        "title": "File Statics Bash Script with Linux",
+        "image": "images/Linux.PNG",
+        "description": "Developed a bash script that receives a file as input and prints the number of each type of file in the directory and subdirectories. I achieved this through using the ls-lR command to collect data and used egrep and the sed command to filter that data. In addition, the program also printed the permission statistics of the file. I received a 100% grade for the project, plus two bonus marks.",
+        "links": [
+          "https://github.com/JamesFaloon/filestatics"
+        ],
+        "actions": ["see-code"]
+      },
+      {
+        "projectId": 5,
+        "title": "VPC Connectivity AWS Cloud with EC2 Service",
+        "image": "images/Cloud-Vpc-Connectivity.PNG",
+        "description": "Constructed a network topology featuring VPCs, Subnets and virtual machines in the EC2 service. I implemented internet connectivity for each virtual machine with internet gateways and NAT gateways. I also implemented connectivity to all virtual machines with unique route tables and VPC peering, which allowed me to achieve a 100% grade for the assignment.",
+        "links": [
+          "https://github.com/JamesFaloon/create_vpcs"
+        ],
+        "actions": ["see-code"]
+      }
+    ]
+  }

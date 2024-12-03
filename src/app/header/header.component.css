@@ -1,0 +1,30 @@
+
+.darkMode {
+    background-color: black;
+    color: white;
+}
+
+.lightMode {
+    background-color: lightgray;
+    color: black
+}
+
+#header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#subheader {
+    display: flex;
+    text-align: center;
+}
+
+@media (max-width : 1000px) {
+    #subheader {
+        flex-wrap: wrap;
+    }
+
+}
