@@ -1,0 +1,97 @@
+body {
+    min-height: 100vh
+}
+
+.darkMode {
+    background-color: #454545;
+    color: white;
+}
+
+.lightMode {
+    background-color: white;
+    color: black;
+}
+
+.darkCard {
+    background-color: #5A5A5A;
+    color: white;
+}
+
+.lightCard {
+    background-color: lightgray;
+    color: black;
+}
+
+.darkLink {
+    background-color: grey;
+
+}
+
+
+
+
+#title {
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+    padding: 30px;
+}
+
+mat-card {
+    text-align: center;
+    margin: 20px;
+    border: 1px solid black;
+    width: 30%;
+    padding: 25px;
+}
+
+#image {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+
+}
+
+mat-card img {
+    border: 1px solid black;
+    width: 95%;
+}
+
+mat-card-actions {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    color: #bcccdc
+}
+
+a {
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+
+#mat-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+@media (max-width: 1217px) {
+    mat-card {
+        width: 45%;
+        /* Medium screens: two cards per row */
+    }
+}
+
+
+@media (max-width: 817px) {
+    mat-card {
+        width: 90%;
+        /* Smaller screens: one card per row */
+        margin: 10px;
+        /* Reduce margins for compactness */
+    }
+}

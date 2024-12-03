@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Header, Contact, About, Footer } from './classSetups';
+import { Header, Contact, About, Footer, ProjectPage, Projects } from './classSetups';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -17,6 +17,10 @@ export class AppComponent {
   aboutContent!: About;
   contactContent !: Contact;
   footerContent!: Footer;
+  projectPageContent !: ProjectPage;
+
+
+  projectsContent !: Projects[];
 
   darkMode = true;
 
@@ -28,16 +32,23 @@ export class AppComponent {
       this.contactContent = this.jsonData.contact;
       this.aboutContent = this.jsonData.about;
       this.footerContent = this.jsonData.footer;
+      this.projectPageContent = this.jsonData.project;
     });
 
   }
 
   loadProjects() {
+    this.url = "data/project.json"
+    this.http.get(this.url).subscribe((data) => {
+      this.jsonData = data;
+      this.projectsContent = this.jsonData.projects;
+    });
 
   }
 
   ngOnInit(): void {
     this.loadContent()
+    this.loadProjects()
   }
 
 }

@@ -1,6 +1,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <app-header [header]=headerContent [contact]=contactContent [darkMode]=darkMode> </app-header>
 <app-about [about]=aboutContent [darkMode]=darkMode> </app-about>
+<app-projects [projects]=projectsContent [content]=projectPageContent [darkMode]=darkMode> </app-projects>
 <app-contact [contact]=contactContent [darkMode]=darkMode> </app-contact>
 <app-footer [footer]=footerContent [darkMode]=darkMode> </app-footer>
 <div [ngClass]="{'darkMode' : darkMode, 'lightMode' : !darkMode}">

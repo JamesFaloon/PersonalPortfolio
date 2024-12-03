@@ -5,6 +5,18 @@ export interface Header {
     divIds: String[]
 }
 
+export interface About {
+    divIds: String[],
+    title: String,
+    description: String
+}
+
+export interface ProjectPage {
+    title: String,
+    projectName: String
+    divIds: String[]
+}
+
 export interface Contact {
     divIds: String[],
     title: String,
@@ -13,11 +25,6 @@ export interface Contact {
     icons: String[]
 }
 
-export interface About {
-    divIds: String[],
-    title: String,
-    description: String
-}
 
 
 export interface Footer {
@@ -25,5 +32,17 @@ export interface Footer {
     title: String,
     tech: String[],
     credits: String
+
+}
+
+
+
+export interface Projects {
+    projectId: number,
+    title: String,
+    image: String,
+    description: String,
+    links: String[],
+    actions: String[]
 
 }

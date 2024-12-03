@@ -1,0 +1,60 @@
+@if (projects && content) {
+<div id={{content.divIds[0]}} [ngClass]="{'darkMode' : darkMode, 'lightMode' : !darkMode}">
+    <div id={{content.divIds[1]}}>
+        <h1> {{content.title}} </h1>
+    </div>
+    <div>
+
+        <mat-form-field>
+            <mat-label>
+                Select Project By Name
+            </mat-label>
+            <input matInput [(ngModel)]="this.content.projectName" (input)="filterData(this.content.projectName)" />
+        </mat-form-field>
+
+
+
+    </div>
+    <div id={{content.divIds[2]}}>
+        @for(project of filteredProjects; track project ) {
+        <mat-card [ngClass]="{'darkCard' : darkMode, 'lightCard' : !darkMode }">
+            <mat-card-header>
+                <mat-card-title>
+                    <h3> {{project.title}} </h3>
+                </mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <div id="image">
+                    <img mat-card-image src="{{project.image}}">
+
+                </div>
+                <div id="text">
+                    {{project.description}}
+
+                </div>
+
+
+            </mat-card-content>
+            <mat-card-actions>
+                @for (action of project.actions; track action; let i = $index) {
+                <a href="{{project.links[i]}}"> <button mat-button [ngClass]="{'darkLink' : darkMode}"> {{action}}
+                    </button> </a>
+                }
+
+            </mat-card-actions>
+        </mat-card>
+
+        }
+    </div>
+
+    <div>
+        @if(darkMode) {
+        <div [ngStyle]="{'border-bottom' : 'solid 1px #5A5A5A'}"> </div>
+        } @else {
+        <div [ngStyle]="{'border-bottom' : 'solid 1px black'}"> </div>
+        }
+    </div>
+
+</div>
+}
