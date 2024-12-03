@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Projects, ProjectPage } from '../classSetups';
+import { LikeService } from '../services/like/like.service';
 @Component({
   selector: 'app-projects',
   standalone: false,
@@ -8,9 +9,20 @@ import { Projects, ProjectPage } from '../classSetups';
   styleUrl: './projects.component.css'
 })
 export class ProjectsComponent {
+
+  constructor(private likeService: LikeService) {
+
+  }
+
+
   @Input() projects!: Projects[];
   @Input() content!: ProjectPage;
   @Input() darkMode!: boolean;
+  liked: boolean[] = [false, false, false, false, false];
+
+
+
+
 
 
   filteredProjects: {
@@ -34,6 +46,10 @@ export class ProjectsComponent {
   }
 
 
+  likeCard(like: number) {
+    this.liked[like] = this.likeService.like(this.liked[like]);
+
+  }
   ngOnInit() {
     this.filteredProjects = this.projects
   }

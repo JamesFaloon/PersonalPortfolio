@@ -1,31 +1,74 @@
 {
-    "header" : {
-        "name" : "James Faloon", "role" : "Student in Software Development and Network Engineering Program at Sheridan College.",
-        "motto" : "Avid Learner Who Enjoys Finding Creative Solutions to Complex Problems.",
-        "divIds" : ["outer", "header", "subheader"]
+    "header": {
+        "name": "James Faloon",
+        "role": "Student in Software Development and Network Engineering Program at Sheridan College.",
+        "motto": "Avid Learner Who Enjoys Finding Creative Solutions to Complex Problems.",
+        "divIds": [
+            "outer",
+            "header",
+            "subheader"
+        ]
     },
-    "about" : {
-        "divIds" : ["outer", "header", "content"],
-        "title" : "About",
-        "description" : "My name is James Faloon. I am currently in the second year of Sheridan College's Software Development and Network Engineering program. I have experience with object-oriented programming in Python and Java, web development with Angular and JavaScript, operating systems with Linux, cloud with AWS, and databases with MySQL and NoSQL."
+    "about": {
+        "divIds": [
+            "outer",
+            "header",
+            "content"
+        ],
+        "title": "About",
+        "description": "My name is James Faloon. I am currently in the second year of Sheridan College's Software Development and Network Engineering program. I have experience with object-oriented programming in Python and Java, web development with Angular and JavaScript, operating systems with Linux, cloud with AWS, and databases with MySQL and NoSQL."
     },
-    "project" : {
-        "title" : "Projects",
-        "projectName" : "",
-        "divIds" : ["outer", "title", "mat-card", "image", "text"],
-        "icons" : ["images/black.png", "images/blue.png", "images/white.png"]
+    "project": {
+        "title": "Projects",
+        "projectName": "",
+        "divIds": [
+            "outer",
+            "title",
+            "mat-card",
+            "image",
+            "text"
+        ],
+        "icons": [
+            "favorite",
+            "favorite_border"
+        ]
     },
-    "contact" : {
-        "divIds" : ["outer", "header", "content"],
-        "title" : "Contact",
-        "socials" : ["Linkedin", "Github", "Email"],
-        "links" : ["https://www.linkedin.com/in/james-faloon/", "https://github.com/JamesFaloon", "james.faloon@bell.net"],
-        "icons" : ["business", "code", "email"]
+    "contact": {
+        "divIds": [
+            "outer",
+            "header",
+            "content"
+        ],
+        "title": "Contact",
+        "socials": [
+            "Linkedin",
+            "Github",
+            "Email"
+        ],
+        "links": [
+            "https://www.linkedin.com/in/james-faloon/",
+            "https://github.com/JamesFaloon",
+            "james.faloon@bell.net"
+        ],
+        "icons": [
+            "business",
+            "code",
+            "email"
+        ]
     },
-    "footer" : {
-        "divIds" : ["outer", "header", "content"],
-         "title" : "Technologies",
-         "tech" : ["HTML", "CSS", "TypeScript", "Angular"],
-         "credits" : "Made By James Faloon"
+    "footer": {
+        "divIds": [
+            "outer",
+            "header",
+            "content"
+        ],
+        "title": "Technologies",
+        "tech": [
+            "HTML",
+            "CSS",
+            "TypeScript",
+            "Angular"
+        ],
+        "credits": "Made By James Faloon"
     }
 }

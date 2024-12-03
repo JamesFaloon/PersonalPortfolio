@@ -14,7 +14,8 @@ export interface About {
 export interface ProjectPage {
     title: String,
     projectName: String
-    divIds: String[]
+    divIds: String[],
+    icons: String[]
 }
 
 export interface Contact {

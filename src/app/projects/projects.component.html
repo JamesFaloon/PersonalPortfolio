@@ -16,7 +16,7 @@
 
     </div>
     <div id={{content.divIds[2]}}>
-        @for(project of filteredProjects; track project ) {
+        @for(project of filteredProjects; track project; let i = $index ) {
         <mat-card [ngClass]="{'darkCard' : darkMode, 'lightCard' : !darkMode }">
             <mat-card-header>
                 <mat-card-title>
@@ -37,10 +37,21 @@
 
             </mat-card-content>
             <mat-card-actions>
-                @for (action of project.actions; track action; let i = $index) {
-                <a href="{{project.links[i]}}"> <button mat-button [ngClass]="{'darkLink' : darkMode}"> {{action}}
+                @for (action of project.actions; track action; let j = $index) {
+                <a href="{{project.links[j]}}"> <button mat-button [ngClass]="{'darkLink' : darkMode}"> {{action}}
                     </button> </a>
                 }
+                @if (liked[i]) {
+                <mat-icon [ngStyle]="{'margin' : '15px'}" (click)="likeCard(i)">
+                    {{content.icons[0]}} </mat-icon>
+
+                } @else {
+                <mat-icon [ngStyle]="{'margin' : '15px'}" (click)="likeCard(i)">
+                    {{content.icons[1]}} </mat-icon>
+
+                }
+
+
 
             </mat-card-actions>
         </mat-card>
