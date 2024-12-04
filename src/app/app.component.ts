@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Header, Contact, About, Footer, ProjectPage, Projects } from './classSetups';
+import { LoadJsonService } from './services/json/load-json.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,7 +10,7 @@ import { Header, Contact, About, Footer, ProjectPage, Projects } from './classSe
 })
 export class AppComponent {
   title = 'portfolio';
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private json: LoadJsonService) { }
 
   url !: string;
   jsonData !: any;
@@ -24,9 +25,10 @@ export class AppComponent {
 
   darkMode = true;
 
-  loadContent() {
-    this.url = "data/content.json";
-    this.http.get(this.url).subscribe((data) => {
+  
+
+  ngOnInit(): void {
+    this.json.loadContent().subscribe((data) => {
       this.jsonData = data;
       this.headerContent = this.jsonData.header;
       this.contactContent = this.jsonData.contact;
@@ -34,21 +36,10 @@ export class AppComponent {
       this.footerContent = this.jsonData.footer;
       this.projectPageContent = this.jsonData.project;
     });
-
-  }
-
-  loadProjects() {
-    this.url = "data/project.json"
-    this.http.get(this.url).subscribe((data) => {
+    this.json.loadProjects().subscribe((data) => {
       this.jsonData = data;
       this.projectsContent = this.jsonData.projects;
     });
-
-  }
-
-  ngOnInit(): void {
-    this.loadContent()
-    this.loadProjects()
   }
 
 }
