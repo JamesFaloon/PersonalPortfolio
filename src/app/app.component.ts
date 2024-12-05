@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Header, Contact, About, Footer, ProjectPage, Projects } from './classSetups';
 import { LoadJsonService } from './services/json/load-json.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DarkModeService } from './services/darkMode/dark-mode.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,8 +12,8 @@ import { LoadJsonService } from './services/json/load-json.service';
 })
 export class AppComponent {
   title = 'portfolio';
-  constructor(private http: HttpClient, private json: LoadJsonService) { }
 
+  id !: string;
   url !: string;
   jsonData !: any;
   headerContent !: Header;
@@ -21,13 +23,24 @@ export class AppComponent {
   projectPageContent !: ProjectPage;
 
 
+  constructor(private http: HttpClient, private json: LoadJsonService, private route: ActivatedRoute, private dark: DarkModeService, private router: Router) {
+    this.dark.darkMode$.subscribe((data) => {
+      this.darkMode = data;
+    })
+  }
+
+
   projectsContent !: Projects[];
 
-  darkMode = true;
+  darkMode = false
 
-  
+  toggle(): void {
+    this.dark.toggleDarkMode();
+
+  }
 
   ngOnInit(): void {
+
     this.json.loadContent().subscribe((data) => {
       this.jsonData = data;
       this.headerContent = this.jsonData.header;

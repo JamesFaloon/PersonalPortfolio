@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { Projects, ProjectPage } from '../classSetups';
 import { LikeService } from '../services/like/like.service';
+import { ActivatedRoute } from '@angular/router';
+import { DarkModeService } from '../services/darkMode/dark-mode.service';
 @Component({
   selector: 'app-projects',
   standalone: false,
@@ -10,14 +12,14 @@ import { LikeService } from '../services/like/like.service';
 })
 export class ProjectsComponent {
 
-  constructor(private likeService: LikeService) {
+  constructor(private likeService: LikeService, private route: ActivatedRoute, private dark: DarkModeService) {
 
   }
 
 
-  @Input() projects!: Projects[];
-  @Input() content!: ProjectPage;
-  @Input() darkMode!: boolean;
+  projects: Projects[] = [];
+  content: any = null;
+  darkMode !: boolean;
   liked: boolean[] = [false, false, false, false, false];
 
 
@@ -51,7 +53,14 @@ export class ProjectsComponent {
 
   }
   ngOnInit() {
-    this.filteredProjects = this.projects
+    this.dark.darkMode$.subscribe((data) => {
+      this.darkMode = data;
+    })
+    const rawData = this.route.snapshot.data['project'];
+    this.projects = rawData.file1.projects;
+    this.content = rawData.file2.project;
+    this.filteredProjects = this.projects;
+
   }
 
 }
