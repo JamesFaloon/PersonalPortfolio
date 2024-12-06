@@ -1,5 +1,12 @@
 @if(contact) {
-<div id="{{contact.divIds[0]}}" [ngClass]="{'darkMode' : darkMode, 'lightMode' : !darkMode}">
+<div id="{{contact.divIds[0]}}" [ngClass]="{'darkMode' : darkMode, 'lightMode' : !darkMode}">    
+    <div>
+        @if ('darkMode') {
+        <div [ngStyle]="{'border-bottom' : '1px solid #D3D3D3'}"> </div>
+        } @else {
+        <div [ngStyle]="{'border-bottom' : '1px solid #black'}"> </div>
+        }
+    </div>
     <div id="{{contact.divIds[1]}}">
         <h1> {{contact.title}} </h1>
     </div>

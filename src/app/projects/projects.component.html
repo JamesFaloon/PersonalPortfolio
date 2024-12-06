@@ -17,7 +17,7 @@
     </div>
     <div id={{content.divIds[2]}}>
         @for(project of filteredProjects; track project; let i = $index ) {
-        <mat-card [ngClass]="{'darkCard' : darkMode, 'lightCard' : !darkMode }">
+        <mat-card [ngClass]="{'darkCard' : darkMode, 'lightCard' : !darkMode }" [routerLink]="['/project', project.projectId]">
             <mat-card-header>
                 <mat-card-title>
                     <h3> {{project.title}} </h3>
@@ -59,13 +59,6 @@
         }
     </div>
 
-    <div>
-        @if(darkMode) {
-        <div [ngStyle]="{'border-bottom' : 'solid 1px #5A5A5A'}"> </div>
-        } @else {
-        <div [ngStyle]="{'border-bottom' : 'solid 1px black'}"> </div>
-        }
-    </div>
 
 </div>
 }
