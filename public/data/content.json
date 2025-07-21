@@ -20,7 +20,7 @@
     },
     "project": {
         "title": "Projects",
-        "projectName": "",
+        "filter" : "Filter Project By Name",
         "divIds": [
             "outer",
             "title",
@@ -31,7 +31,11 @@
         "icons": [
             "favorite",
             "favorite_border"
+        ],
+        "undo" : [
+            "back to root"
         ]
+
     },
     "contact": {
         "divIds": [
