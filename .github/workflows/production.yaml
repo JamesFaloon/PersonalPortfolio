@@ -1,0 +1,37 @@
+name : Personal Portfolio Production Deployment
+
+env : 
+  VERCEL_ORG_ID : ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID : ${{ secrets.VERCEL_PROJECT_ID }}
+
+on:
+  push:
+    branches:
+      - master
+
+
+jobs : 
+  Deploy_Production:
+    runs-on: ubuntu-latest
+    steps:
+      - uses : actions/checkout@v3
+
+
+      - name : NPM install  Dependencies
+      - run : npm i 
+            
+      - name : NPM INSTALL GLOBAL CLI 
+      - run : npm i -g vercel 
+
+      - name : pull vercel enviorment infromation 
+      - run : vercel pull --yes --enviorment=production --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name : BUILD project artifacts
+      - run : vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+
+      - name : deploy project artifacts
+      - run : vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+
+
