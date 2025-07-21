@@ -1,8 +1,8 @@
-name : Personal Portfolio Preview Deployment
+name: Personal Portfolio Preview Deployment
 
-env : 
-  VERCEL_ORG_ID : ${{ secrets.VERCEL_ORG_ID }}
-  VERCEL_PROJECT_ID : ${{ secrets.VERCEL_PROJECT_ID }}
+env: 
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
 on:
   push:
@@ -10,28 +10,29 @@ on:
       - master
 
 
-jobs : 
+jobs: 
   Deploy_Preview:
     runs-on: ubuntu-latest
     steps:
-      - uses : actions/checkout@v3
+      - name: Checkout Repo  
+        uses: actions/checkout@v3
 
 
-      - name : NPM install  Dependencies
-      - run : npm i 
+      - name: NPM install  Dependencies
+      - run: npm install
             
-      - name : NPM INSTALL GLOBAL CLI 
-      - run : npm i -g vercel 
+      - name: NPM INSTALL GLOBAL CLI 
+      - run: npm install -g vercel 
 
-      - name : pull vercel enviorment infromation 
-      - run : vercel pull --yes --enviorment=preview --token=${{ secrets.VERCEL_TOKEN }}
+      - name: pull vercel environment Information
+      - run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name : BUILD project artifacts
-      - run : vercel build --token=${{ secrets.VERCEL_TOKEN }}
+      - name: BUILD project artifacts
+      - run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
 
 
-      - name : deploy project artifacts
-      - run : vercel deploy --prebuilt -token=${{ secrets.VERCEL_TOKEN }}
+      - name: deploy project artifacts
+      - run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
 
 
 
